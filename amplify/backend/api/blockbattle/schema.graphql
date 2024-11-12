@@ -1,0 +1,14 @@
+type Player @model @auth(rules: [{ allow: owner }]) {
+  id: ID!
+  username: String!
+  gamesWon: Int!
+  squaresConquered: Int!
+}
+
+type Ranking @model @auth(rules: [{ allow: public, operations: [read] }, { allow: private, operations: [create, update, delete] }]) {
+  id: ID!
+  username: String!
+  rank: Int!
+  gamesWon: Int!
+  squaresConquered: Int!
+}

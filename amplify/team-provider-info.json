@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-blockbattle-dev-146dd-authRole",
+      "UnauthRoleArn": "arn:aws:iam::777027346100:role/amplify-blockbattle-dev-146dd-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::777027346100:role/amplify-blockbattle-dev-146dd-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-blockbattle-dev-146dd-deployment",
+      "UnauthRoleName": "amplify-blockbattle-dev-146dd-unauthRole",
+      "StackName": "amplify-blockbattle-dev-146dd",
+      "StackId": "arn:aws:cloudformation:us-east-1:777027346100:stack/amplify-blockbattle-dev-146dd/5db21fc0-9be7-11ef-8676-0affdedb5a11",
+      "AmplifyAppId": "db4vi6n8gz0l4"
+    },
+    "categories": {
+      "auth": {
+        "blockbattle58e03e11": {}
+      },
+      "api": {
+        "blockbattle": {}
+      }
+    }
+  }
+}
