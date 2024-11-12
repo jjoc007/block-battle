@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { API, graphqlOperation } from 'aws-amplify';
+import { generateClient } from '@aws-amplify/api';
 import { listRankings } from '../graphql/queries';
 
 const Ranking = () => {
+    const client = generateClient();
     const [rankings, setRankings] = useState([]);
 
     useEffect(() => {
@@ -11,7 +12,19 @@ const Ranking = () => {
 
     async function fetchRankings() {
         try {
-            const rankingData = await API.graphql(graphqlOperation(listRankings, { limit: 10, sort: { field: "rank", direction: "asc" } }));
+
+            const variables = {
+                limit: 10,
+                sort: { field: "rank", direction: "asc" }
+            };
+
+            const rankingData = await client.graphql({
+                query: listRankings,
+                variables: variables
+            });
+
+            console.log(rankingData);
+
             setRankings(rankingData.data.listRankings.items);
         } catch (err) {
             console.error('Error fetching rankings:', err);

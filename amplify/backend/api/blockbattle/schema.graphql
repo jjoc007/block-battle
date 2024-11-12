@@ -1,5 +1,6 @@
 type Player @model @auth(rules: [{ allow: owner }]) {
   id: ID!
+  name: String!
   username: String!
   gamesWon: Int!
   squaresConquered: Int!
